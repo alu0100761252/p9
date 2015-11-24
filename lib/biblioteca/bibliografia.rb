@@ -6,13 +6,12 @@ class Libro
    attr_writer :autores, :titulo, :serie, :editorial, :edicion, :fecha, :isbn
    
   attr :str
-  def <=>(otro_autor) 
-    autores.size <=> otro_autor.autores.size
+  def <=>(anOther)
+    str.size <=> anOther.str.size 
   end
   def inspect
     @str
-  end
-  
+  end 
   
     def initialize(autores, titulo, serie, editorial, edicion, fecha, isbn,str)
         @str = str

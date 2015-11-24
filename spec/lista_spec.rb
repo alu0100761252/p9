@@ -176,3 +176,42 @@ describe "#Añadir nodo4" do
  
  end
  end
+ 
+  context "# haciendo el metodo enumerable" do
+       before :each do 
+       @lm = Lista::Lista.new(@l4,@l5,nil)
+       @l6 = Lista::Lista.new(nil,@valor,nil)
+       
+    end
+      it "comprobrando el metodo all? con un bloque vacio" do
+      expect(@l6.all?).to eq(true)
+      expect(@lm.all?).to eq(false)
+    end 
+    it "comprobrando el metodo any?" do
+      expect(@l1.any?).to eq(true)
+      expect(@lm.any?).to eq(false)
+    end 
+    it "comprobrando el metodo collect" do
+      expect(@l2.map{|i| i*i}).to eq([4,4])
+      expect(@l2.collect{|i| i*i}).to eq([4,4])
+    end 
+    it "comprobrando el metodo count" do
+      expect(@l2.count).to eq(3)
+    end
+    it "comprobrando el metodo detect" do
+      expect(@l3.detect {|i| i == 0}).to eq(0)
+      expect(@l3.find {|i| i == 1}).to eq(1)
+    end
+    it "comprobrando drop" do
+      expect(@l4.drop(1)).to eq([1])
+    end
+    it "comprobrando max" do
+      expect(@l4.max).to eq(1)
+    end
+    it "comprobrando min" do
+      expect(@l4.min).to eq(0)
+    end
+    it "comprobrando sort" do
+      expect(@l3.sort).to eq([0,1])
+    end
+  end
