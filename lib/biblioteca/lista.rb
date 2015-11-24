@@ -1,5 +1,4 @@
-require "b" 
-require "version"
+require "b"  
 class Lista 
       include Enumerable
       attr_accessor :cabeza
