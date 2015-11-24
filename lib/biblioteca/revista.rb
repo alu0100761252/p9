@@ -1,5 +1,6 @@
 require 'version'
 require 'biblioteca'
+require 'b'
 
 class Revista < Libro
 	attr_accessor :issn

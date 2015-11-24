@@ -1,9 +1,21 @@
 require 'b'
 
 class Libro
+   include Comparable
    attr_reader :autores, :titulo, :serie, :editorial, :edicion, :fecha, :isbn 
    attr_writer :autores, :titulo, :serie, :editorial, :edicion, :fecha, :isbn
-    def initialize(autores, titulo, serie, editorial, edicion, fecha, isbn)
+   
+  attr :str
+  def <=>(otro_autor) 
+    autores.size <=> otro_autor.autores.size
+  end
+  def inspect
+    @str
+  end
+  
+  
+    def initialize(autores, titulo, serie, editorial, edicion, fecha, isbn,str)
+        @str = str
         @autores=autores
         @titulo=titulo
         @serie=serie
@@ -12,6 +24,37 @@ class Libro
         @fecha=fecha
         @isbn=isbn
     end
+    
+    
+    
+     def each
+        @autores.each{|autores| yield autores}
+     end
+     def each
+        @titulos.each{|titulos| yield tituloss}
+     end
+     def each
+        @serie.each{|serie| yield serie}
+     end
+     def each
+        @editorial.each{|editorial| yield editorial}
+     end
+     def each
+        @edicion.each{|edicion| yield edicion}
+     end
+     def each
+        @fecha.each{|fecha| yield editorial}
+     end
+     def each
+        @isbn.each{|editorial| yield editorial}
+     end
+     def each
+        @str.each{|str| yield str}
+     end
+     
+     
+     
+     
     
     def get_autores
        @autores 

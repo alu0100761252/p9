@@ -1,7 +1,8 @@
 require "b" 
-require "biblioteca/version"
+require "version"
 class Lista 
-      attr_accesor :cabeza
+      include Enumerable
+      attr_accessor :cabeza
       def initialize (valor)
           @cabeza = Nodo.new(nil,valor,nil)
       end

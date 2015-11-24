@@ -1,5 +1,6 @@
 require 'version'
 require 'biblioteca'
+require 'b'
 
 class Eleclibro < Libro
 	attr_accessor :url
