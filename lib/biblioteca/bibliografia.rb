@@ -1,17 +1,11 @@
 require 'b'
 
 class Libro
-   include Comparable
+    
    attr_reader :autores, :titulo, :serie, :editorial, :edicion, :fecha, :isbn 
    attr_writer :autores, :titulo, :serie, :editorial, :edicion, :fecha, :isbn
    
-  attr :str
-  def <=>(anOther)
-    str.size <=> anOther.str.size 
-  end
-  def inspect
-    @str
-  end 
+  
   
     def initialize(autores, titulo, serie, editorial, edicion, fecha, isbn,str)
         @str = str
@@ -22,36 +16,7 @@ class Libro
         @edicion=edicion
         @fecha=fecha
         @isbn=isbn
-    end
-    
-    
-    
-     def each
-        @autores.each{|autores| yield autores}
-     end
-     def each
-        @titulos.each{|titulos| yield tituloss}
-     end
-     def each
-        @serie.each{|serie| yield serie}
-     end
-     def each
-        @editorial.each{|editorial| yield editorial}
-     end
-     def each
-        @edicion.each{|edicion| yield edicion}
-     end
-     def each
-        @fecha.each{|fecha| yield editorial}
-     end
-     def each
-        @isbn.each{|editorial| yield editorial}
-     end
-     def each
-        @str.each{|str| yield str}
-     end
-     
-     
+    end 
      
      
     

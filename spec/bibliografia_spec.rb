@@ -19,13 +19,8 @@ describe "# almacenamiento de libros" do
         @p1.get_isbn.length.should_not be 0
 
     end
-    
- context "# comparaciones entre autores alfabeticamente" do
-     
-     it "El autor de la 1 es mayor que el de la 2" do
-      expect(@p1 < @p2).to eq(true)
-    end
+ 
     
     
 end
-end
+

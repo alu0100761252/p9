@@ -1,9 +1,11 @@
 require "biblioteca/version"
 class Lista 
       include Enumerable
-      attr_accessor :cabeza
+       
+       attr_accessor :valor
       def initialize (valor)
           @cabeza = Nodo.new(nil,valor,nil)
+          @fin=Nodo.new(nil,valor,nil)
       end
       
       def anyadir(value)
@@ -12,7 +14,11 @@ class Lista
                 current = current.nodo_siguiente
           end
           current.nodo_siguiente= Nodo.new(current,value,nil)
-          self
+           @fin=current.siguiente
+          previous = @fin
+           previous.anterior = current 
+          
+          
       end
       
       def get_cabeza()
@@ -45,29 +51,31 @@ class Lista
               
               if (current != nil) && (current.nodo_siguiente != nil)
                   current.nodo_siguiente = (current.nodo_siguiente).nodo_siguiente
+                  current.anterior = (current.anterior).anterior
               end
           end
-      end
+      end 
       
-      
-      def display 
-          current = @cabeza
-          lista_tope = []
-          while current.nodo_siguiente != nil
-              lista_tope += [current.value.to_s]
-              current = current.nodo_siguiente
-          end
-          lista_tope += [current.value.to_s]
-          puts lista_tope.join("-->")
-        end
-   end
-    
+     
  
     
  end
  
  def each 
-        yield @cabeza
-        yield @fin
+   inicio = @cabeza
+   fin = @fin
+   while (inicio != fin)
+   yield inicio.valor
     
-end
+  
+   end
+      
+        
+         #current = @cabecera
+     #   while (current.siguiente != nil)
+      #      yield current
+       #     current = current.siguiente
+        #end
+ 
+ end
+ end

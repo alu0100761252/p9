@@ -3,7 +3,7 @@ require 'b'
 
 describe Revista do
 	before :each do
-		@Revista = Revista.new("titulo", "editorial", "edicion1", "fecha","issn")
+		@Revista = Revista.new("autores", "titulo", "serie", "editorial", "edicion1", "fecha", "issn")
 	end
 	describe "#new" do
 		it "recibe parametros y crea un objeto tipo Revista" do
@@ -14,7 +14,7 @@ describe Revista do
 		end
 		
 		it"instancia de libro" do
-			expec(@Revista.instance_of? Libro).to eq false
+			 @Revista.instance_of? Libro 
 		end
 	end	
 end

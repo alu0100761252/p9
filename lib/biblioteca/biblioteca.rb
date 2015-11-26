@@ -33,7 +33,7 @@ class Libro
     end
     
     def get_fecha
-        @feha
+        @fecha
     end
     
     def get_isbn
