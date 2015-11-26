@@ -1,4 +1,4 @@
-require "b"  
+require "biblioteca/version"
 class Lista 
       include Enumerable
       attr_accessor :cabeza
@@ -65,3 +65,9 @@ class Lista
  
     
  end
+ 
+ def each 
+        yield @cabeza
+        yield @fin
+    
+end

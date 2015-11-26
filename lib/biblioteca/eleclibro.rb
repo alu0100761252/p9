@@ -1,5 +1,6 @@
  
-require 'b'
+ 
+require 'biblioteca/biblioteca'
 
 class Eleclibro < Libro
 	attr_accessor :url

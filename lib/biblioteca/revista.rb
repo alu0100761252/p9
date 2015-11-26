@@ -1,5 +1,5 @@
  
-require 'b'
+require 'biblioteca/biblioteca'
 
 class Revista < Libro
 	attr_accessor :issn

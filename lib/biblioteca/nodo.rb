@@ -1,6 +1,7 @@
-require "b"
+ 
+require 'biblioteca/biblioteca'
 class Nodo
-    attr_accesor :value, :nextt, :nodo_siguiente, :nodo_anterior
+    attr_accessor :value, :nextt, :nodo_siguiente, :nodo_anterior
     
     def initialize(valor,nextt,siguiente,anterior)
         @value = valor
