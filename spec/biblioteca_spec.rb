@@ -25,5 +25,8 @@ describe Libro do
         it "Libro2 < Libro4,según el tamaño del titulo si es mas grande"do
             expect(@libro2 < @libro3).to eq(true)
         end
+         it "Libro 1 y 2 son diferentes" do
+      expect(@libro1 == @libro2).to eq(false)
+    end
     end
 end

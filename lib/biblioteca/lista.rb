@@ -2,7 +2,7 @@ require "biblioteca/version"
 class Lista 
       include Enumerable
        
-       attr_accessor :valor
+       attr_accessor :valor  
       def initialize (valor)
           @cabeza = Nodo.new(nil,valor,nil)
           @fin=Nodo.new(nil,valor,nil)
@@ -16,9 +16,7 @@ class Lista
           current.nodo_siguiente= Nodo.new(current,value,nil)
            @fin=current.siguiente
           previous = @fin
-           previous.anterior = current 
-          
-          
+           previous.anterior = current  
       end
       
       def get_cabeza()
@@ -36,9 +34,7 @@ class Lista
     	else
     		@cabeza = cabeza.nodo_siguiente
     		@current.nodo_siguiente = nil
-    	end  
-    	
-    	
+    	end   
       def delete(valor)
           current = @cabeza
           if current.value == valor
@@ -54,21 +50,14 @@ class Lista
                   current.anterior = (current.anterior).anterior
               end
           end
-      end 
-      
-     
- 
-    
- end
- 
- def each 
-   inicio = @cabeza
-   fin = @fin
-   while (inicio != fin)
-   yield inicio.valor
-    
-  
-   end
+      end  
+    def each (&block)
+      nodo = @cabeza
+      while nodo != nil
+        yield nodo[:value]
+        nodo=nodo[:next]
+      end
+    end
       
         
          #current = @cabecera
@@ -76,6 +65,7 @@ class Lista
       #      yield current
        #     current = current.siguiente
         #end
+  
+ end
  
- end
- end
+end
