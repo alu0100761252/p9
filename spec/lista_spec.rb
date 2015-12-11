@@ -29,7 +29,7 @@ describe Lista do
 								"mi casa",
 								"segunda vida",
 								"mi volumen 2")
-		@libro2.set_autor("pepe","Barreto")
+		@libro2.set_autor("juan","Barreto")
 		@libro2.set_autor("Juan","Vicente")
 		@libro2.set_autor("Maria","Isabel")
 		@libro2.poner_APA
@@ -87,7 +87,7 @@ end
     
    describe "PRACTICA 10"do
       	it "Comprueba que esta en formato APA" do
-			@libro1.get_APA.should eql "Barreto.pepe,Vicente.Juan,Isabel.Maria,(21-09-1994). Mi cumpleaños. (primera vida) (mi volumen). tenerife: mi casa"
+			expect(@libro1.get_APA()).should eql ("Barreto.pepe,Vicente.Juan,Isabel.Maria,(21-09-1994). Mi cumpleaños. (primera vida) (mi volumen). tenerife: mi casa")
 		end
    end
    
