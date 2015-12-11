@@ -14,9 +14,28 @@ describe Lista do
 @revista1 = Revista.new("The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends (The Facets of Ruby)","Pragmatic Bookshelf", "1 edition", "December 25, 2010","12345678")
 @revista2 = Revista.new("The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends (The Facets of Ruby)","Pragmatic Bookshelf", "1 edition", "December 25, 2010","http://www.amazon.es/The-RSpec-Book-Behaviour-Development/dp/1934356379") 
  
- 
-		 
-  
+  @libro1=Referencias.new("Mi cumpleaños",
+								"21-09-1994",
+								"tenerife",
+								"mi casa",
+								"primera vida",
+								"mi volumen")
+		@libro1.set_autor("pepe","Barreto")
+		@libro1.set_autor("Juan","Vicente")
+		@libro1.set_autor("Maria","Isabel")
+		@libro2=Referencias.new("Mi cumpleaños2",
+								"31-09-1994",
+								"tenerife",
+								"mi casa",
+								"segunda vida",
+								"mi volumen 2")
+		@libro2.set_autor("pepe","Barreto")
+		@libro2.set_autor("Juan","Vicente")
+		@libro2.set_autor("Maria","Isabel")
+		@libro2.poner_APA
+		@Node1 = Node.new(nil,@Libro1,nil)
+		@Node2 = Node.new(@node1,@Libro2,nil)
+		@List = Lista.new(@Node1)
  describe "Creada lista " do
     it "Buen almacenamiento de la lista" do 
      @lista.should be_an_instance_of Lista 
@@ -60,10 +79,19 @@ end
          it "comprobrando el metodo all? con un bloque vacio" do
              expect(@listaa.all?).to eq(true)
              expect(@listaa.all?).to eq(false)
+             
+  
     end 
         
     end
- 
+    
+   describe "PRACTICA 10"do
+      	it "Comprueba que esta en formato APA" do
+			@libro1.get_APA.should eql "Barreto.pepe,Vicente.Juan,Isabel.Maria,(21-09-1994). Mi cumpleaños. (primera vida) (mi volumen). tenerife: mi casa"
+		end
+   end
+   
+    
  
 
     

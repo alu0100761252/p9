@@ -7,7 +7,8 @@ describe Libro do
             @libro2 = Libro.new(['Scott Chacon'], "Pro Git 2009th Edition", "(Pro)","Apress", "2009 edition", "August 27, 2009",['ISBN-13: 978-1430218333','ISBN-10: 1430218339'] )
             @libro3 = Libro.new(['David Chelimsky', 'Dave Astels', 'Bryan Helmkamp', 'Dan North', 'Zach Dennis', 'Aslak Hellesoy'] , "The Rspec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends", "(The Facets of Ruby)", "Pragmatic Bookshelf", "1 edition", "July 7, 2013", ['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
         end
-
+        
+  
 
     describe "Herencia" do
         it "Se ha creado el libro" do
@@ -28,5 +29,15 @@ describe Libro do
          it "Libro 1 y 2 son diferentes" do
       expect(@libro1 == @libro2).to eq(false)
     end
-    end
+    
+   
+    
+ 
+ 
 end
+end
+ 
+    
+    
+  
+ 
